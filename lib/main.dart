@@ -1,7 +1,22 @@
+import 'dart:io';
+
 import 'package:cc_baas/views/pages/pages.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void enablePlatformOverrideForDesktop() {
+  // This is only needed for desktop. For mobile and web, the default target platform
+  // is already the correct one.
+  if (!kIsWeb && (Platform.isMacOS || Platform.isLinux || Platform.isWindows)) {
+    debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
+  }
+}
+
+void main() async {
+  enablePlatformOverrideForDesktop();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 

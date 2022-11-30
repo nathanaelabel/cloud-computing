@@ -8,29 +8,47 @@ class Mainmenu extends StatefulWidget {
 }
 
 class _MainmenuState extends State<Mainmenu> {
+  int _selectedIndex = 0;
+
+  static const List<Widget> _widgetOptions = <Widget>[
+    Students(),
+    Account(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        title: Text("Hello "+FirebaseAuth.instance.currentUser!.displayName!.toString()),
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-        actions: [
-          IconButton(
-          onPressed: () async {
-            await AuthService.signOut().then((value) {
-              if (value){
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
-                UiToast.toastOk("Logout successful!");
-              }else{
-                UiToast.toastErr("Logout failed!");
-              }
-            });
-          },
-          icon: Icon(Icons.logout))
+      body: Stack(
+        children: [
+          Center(
+            child: _widgetOptions.elementAt(_selectedIndex),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+            padding: EdgeInsets.fromLTRB(8, 0, 0, 4),
+          )
         ],
-      )
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.dataset), label: "Student"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.verified_user), label: "Account"),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+      ),
     );
   }
 }
