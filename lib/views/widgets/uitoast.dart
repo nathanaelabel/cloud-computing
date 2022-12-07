@@ -36,5 +36,4 @@ class UiToast {
         textColor: Colors.white,
         fontSize: 14);
   }
-
 }
