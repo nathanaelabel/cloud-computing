@@ -1,8 +1,8 @@
 part of 'widgets.dart';
 
 class Mahasiswacard extends StatefulWidget {
-  final Mahasiswa mahasiswa;
-  const Mahasiswacard(this.mahasiswa);
+  final Mahasiswa? mahasiswa;
+  const Mahasiswacard({this.mahasiswa});
   // const Mahasiswacard({Key? key}) : super(key: key);
 
   @override
@@ -12,7 +12,7 @@ class Mahasiswacard extends StatefulWidget {
 class _MahasiswacardState extends State<Mahasiswacard> {
   @override
   Widget build(BuildContext context) {
-    Mahasiswa mhs = widget.mahasiswa;
+    Mahasiswa mhs = widget.mahasiswa!;
     return Card(
         color: const Color(0xFFFFFFFF),
         margin: const EdgeInsets.fromLTRB(16, 8, 16, 8),

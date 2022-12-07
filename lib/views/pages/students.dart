@@ -36,12 +36,15 @@ class _StudentsState extends State<Students> {
                     children: snapshot.data!.docs.map((DocumentSnapshot doc) {
                       Map<String, dynamic> data =
                           doc.data()! as Map<String, dynamic>;
-                      return Mahasiswacard(Mahasiswa(
-                          id: doc.id,
-                          name: data['name'],
-                          nim: data['nim'],
-                          umur: data['umur'],
-                          createdAt: data['createdAt']));
+                      return Mahasiswacard(
+                          mahasiswa: Mahasiswa(
+                        id: doc.id,
+                        name: data['name'],
+                        nim: data['nim'],
+                        umur: data['umur'],
+                        createdAt: data['createdAt'],
+                        updatedAt: data['updatedAt'],
+                      ));
                     }).toList(),
                   );
                 },
