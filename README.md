@@ -1,16 +1,34 @@
-# cc_baas
+# Cloud Computing  
 
-A new Flutter project.
+Cloud Computing **BaaS integration** project using **Flutter** and **Firebase**.  
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🧑‍💻 Developed for  
+Hands-on practice in **Backend-as-a-Service (BaaS) integration** using **Firebase** with **Flutter**, as part of the **Mobile Development course**.  
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 📖 About the Project  
+This project demonstrates the integration of **Firebase services** with a **Flutter** application to implement **cloud-based features**. It covers **authentication, real-time database, and cloud storage**, enabling seamless data management in a **BaaS (Backend-as-a-Service) environment**.  
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 🚀 Features  
+- **User Authentication** (Firebase Auth)  
+- **Cloud Database** (Firestore / Realtime Database)  
+- **Cloud Storage** (Firebase Storage)  
+- **Push Notifications** (Firebase Cloud Messaging)  
+- **Seamless Flutter Integration**  
+
+---
+
+## 🛠️ Technologies Used  
+- **Frontend:** Flutter (Dart)  
+- **Backend-as-a-Service (BaaS):** Firebase  
+- **Database:** Firestore  
+- **Authentication:** Firebase Auth 
+
+---
+
+📌 **Note:** This project is for **learning and practice purposes** in cloud computing and Firebase integration. 
